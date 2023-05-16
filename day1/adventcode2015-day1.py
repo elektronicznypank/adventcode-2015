@@ -1,6 +1,7 @@
 with open('input.txt', 'r') as floors:
     searched_floor: str = floors.readline()
 
+
 def floor_counter(some_string: str):
     how_many_opened: int = some_string.count('(')
     how_many_closed: int = some_string.count(')')
