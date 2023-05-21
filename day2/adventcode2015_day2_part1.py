@@ -2,7 +2,7 @@ with open('input.txt', 'r') as paper_dimensions_data:
     wrapping_paper: list = paper_dimensions_data.readlines()
 
 
-def count_paper_dimension(amount_of_paper: list, final_dimension=0) -> int:
+def count_paper_dimension(amount_of_paper: list, final_dimension: int = 0) -> int:
     for i in range(len(amount_of_paper)):
         if '\n' in amount_of_paper[i]:
             amount_of_paper[i] = amount_of_paper[i].replace('\n', '')
@@ -13,4 +13,4 @@ def count_paper_dimension(amount_of_paper: list, final_dimension=0) -> int:
 
 
 if __name__ == '__main__':
-    print(count_paper_dimension(wrapping_paper))
+    print(f'Elves should order {count_paper_dimension(wrapping_paper)} square feet of paper.')

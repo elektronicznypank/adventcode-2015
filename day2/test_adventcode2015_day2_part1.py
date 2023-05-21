@@ -1,8 +1,8 @@
 # This script is to be run with pytest
 
-from adventcode2015_day2 import count_paper_dimension
+from adventcode2015_day2_part1 import count_paper_dimension
 
-test_cases: list[dict] = [
+test_cases: list[dict: str: list] = [
     {
         'input1': ['1x1x10'],
         'input2': ['2x3x4'],
