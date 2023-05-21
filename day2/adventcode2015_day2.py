@@ -8,7 +8,7 @@ def count_paper_dimension(amount_of_paper: list, final_dimension=0) -> int:
             amount_of_paper[i] = amount_of_paper[i].replace('\n', '')
         l, w, h = amount_of_paper[i].split('x')
         l, w, h = int(l), int(w), int(h)
-        final_dimension += 2 * (l * w + w * h + l * h) + min(l, w, h) * int(sorted(amount_of_paper[i])[1])
+        final_dimension += 2 * (l * w + w * h + l * h) + min(l, w, h) * sorted([l, w, h])[1]
     return final_dimension
 
 
