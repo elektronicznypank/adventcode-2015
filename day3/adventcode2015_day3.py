@@ -3,21 +3,21 @@ with open('input.txt') as houses:
 
 
 def count_visited_houses(amount_of_houses: str) -> int:
-    coordinates: list = [0, 0]
-    coordinates_matrix: set = {(0, 0)}
+    houses_coordinates: list = [0, 0]
+    houses_coordinates_matrix: set = {(0, 0)}
     for i in amount_of_houses:
-        coordinates = list(coordinates)
+        houses_coordinates = list(houses_coordinates)
         if i == '^':
-            coordinates[0] += 1
+            houses_coordinates[0] += 1
         elif i == 'v':
-            coordinates[0] -= 1
+            houses_coordinates[0] -= 1
         elif i == '>':
-            coordinates[1] += 1
+            houses_coordinates[1] += 1
         elif i == '<':
-            coordinates[1] -= 1
-        coordinates: tuple = tuple(coordinates)
-        coordinates_matrix.add(coordinates)
-    return len(coordinates_matrix)
+            houses_coordinates[1] -= 1
+        houses_coordinates: tuple = tuple(houses_coordinates)
+        houses_coordinates_matrix.add(houses_coordinates)
+    return len(houses_coordinates_matrix)
 
 
 if __name__ == '__main__':
