@@ -33,4 +33,4 @@ def count_first_character_to_basement(floors_input: str, floor_index: int = 0, f
 if __name__ == '__main__':
     print(f'The instructions take Santa to floor {count_santa_floor(visited_floors)}.')
     print(f'The position of the character taking Santa to the basement '
-          f'is {count_first_character_to_basement(visited_floors)} ')
+          f'is {count_first_character_to_basement(visited_floors)}.')
