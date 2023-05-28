@@ -19,7 +19,7 @@ test_cases_ribbon: list[dict] = [
 ]
 
 
-def test_count_paper_dimension():
+def test_day2_functions():
     for test_case in test_cases_paper:
         assert count_wrapping_paper_and_ribbon(test_case['input'])[0] == test_case['expected']
     for test_case in test_cases_ribbon:
@@ -27,4 +27,4 @@ def test_count_paper_dimension():
 
 
 if __name__ == '__main__':
-    print(test_count_paper_dimension())
+    print(test_day2_functions())

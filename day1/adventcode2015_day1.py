@@ -1,36 +1,30 @@
 with open('input.txt', 'r') as floors:
     visited_floors: str = floors.readline()
 
-# part 1
 
+def count_santa_floor_and_basement_index(floors_input: str, opened_brackets: int = 0,
+                                         closed_brackets: int = 0, basement_index: int = None,
+                                         is_basement_floor_found=False) \
+                                         -> tuple[int, int or None]:
 
-def count_santa_floor(floors_input: str, opened_brackets: int = 0, closed_brackets: int = 0) -> int:
-    for i in floors_input:
-        if i == '(':
+    for floor_index, floor in enumerate(floors_input):
+
+        if floor == '(':
             opened_brackets += 1
-        elif i == ')':
+
+        elif floor == ')':
             closed_brackets += 1
-    return opened_brackets - closed_brackets
 
+        if opened_brackets - closed_brackets == -1:
+            if not is_basement_floor_found:
 
-# part 2
+                basement_index: int = floor_index + 1
+                is_basement_floor_found = True
 
-
-def count_first_character_to_basement(floors_input: str, floor_index: int = 0, floor: int = 0) -> int or None:
-    try:
-        while floor > -1:
-            if floors_input[floor_index] == '(':
-                floor += 1
-            elif floors_input[floor_index] == ')':
-                floor -= 1
-            floor_index += 1
-    except IndexError:
-        print('Santa will never enter the basement.')
-        return None
-    return floor_index
+    return opened_brackets - closed_brackets, basement_index
 
 
 if __name__ == '__main__':
-    print(f'The instructions take Santa to floor {count_santa_floor(visited_floors)}.')
-    print(f'The position of the character taking Santa to the basement '
-          f'is {count_first_character_to_basement(visited_floors)}.')
+    print(f'The instructions take Santa to floor {count_santa_floor_and_basement_index(visited_floors)[0]} '
+          f'and the position of the first character taking Santa to the basement is '
+          f'{count_santa_floor_and_basement_index(visited_floors)[1]}.')

@@ -1,4 +1,4 @@
-from adventcode2015_day1 import count_first_character_to_basement, count_santa_floor
+from adventcode2015_day1 import count_santa_floor_and_basement_index
 
 part1_test_cases: list[dict] = [
     {'input': '(((())))()()()', 'expected': 0},
@@ -19,9 +19,9 @@ part2_test_cases: list[dict] = [
 
 def test_day1_functions():
     for test_case in part1_test_cases:
-        assert count_santa_floor(test_case['input']) == test_case['expected']
+        assert count_santa_floor_and_basement_index(test_case['input'])[0] == test_case['expected']
     for test_case in part2_test_cases:
-        assert count_first_character_to_basement(test_case['input']) == test_case['expected']
+        assert count_santa_floor_and_basement_index(test_case['input'])[1] == test_case['expected']
 
 
 if __name__ == '__main__':
