@@ -1,6 +1,6 @@
 from adventcode2015_day2 import count_wrapping_paper_and_ribbon
 
-test_cases_paper: list[dict] = [
+test_cases_paper: list[dict[str: list, str: int]] = [
     {'input': ['1x1x10'], 'expected': 43},
     {'input': ['2x3x4'], 'expected': 58},
     {'input': ['1x1x2'], 'expected': 11},
@@ -9,7 +9,7 @@ test_cases_paper: list[dict] = [
     {'input': ['21x56x49'], 'expected': 10927}
 ]
 
-test_cases_ribbon: list[dict] = [
+test_cases_ribbon: list[dict[str: list, str: int]] = [
     {'input': ['2x3x4'], 'expected': 34},
     {'input': ['1x1x10'], 'expected': 14},
     {'input': ['1x10x1'], 'expected': 14},

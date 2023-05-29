@@ -2,10 +2,12 @@ with open('input.txt', 'r') as floors:
     visited_floors: str = floors.readline()
 
 
-def count_santa_floor_and_basement_index(floors_input: str, opened_brackets: int = 0,
-                                         closed_brackets: int = 0, basement_index: int = None,
-                                         is_basement_floor_found=False) \
-                                         -> tuple[int, int or None]:
+def count_santa_floor_and_basement_index(floors_input: str) -> tuple[int, int or None]:
+
+    opened_brackets: int = 0
+    closed_brackets: int = 0
+    basement_index: None = None
+    is_basement_floor_found: bool = False
 
     for floor_index, floor in enumerate(floors_input):
 
@@ -19,7 +21,7 @@ def count_santa_floor_and_basement_index(floors_input: str, opened_brackets: int
             if not is_basement_floor_found:
 
                 basement_index: int = floor_index + 1
-                is_basement_floor_found = True
+                is_basement_floor_found: bool = True
 
     return opened_brackets - closed_brackets, basement_index
 

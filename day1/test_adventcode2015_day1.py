@@ -1,6 +1,6 @@
 from adventcode2015_day1 import count_santa_floor_and_basement_index
 
-part1_test_cases: list[dict] = [
+part1_test_cases: list[dict[str: str, str: int]] = [
     {'input': '(((())))()()()', 'expected': 0},
     {'input': '(((', 'expected': 3},
     {'input': ')))', 'expected': -3},
@@ -8,7 +8,7 @@ part1_test_cases: list[dict] = [
     {'input': '(())(())())))))(', 'expected': -4},
 ]
 
-part2_test_cases: list[dict] = [
+part2_test_cases: list[dict[str: str, str: int or None]] = [
     {'input': '())', 'expected': 3},
     {'input': '((())))', 'expected': 7},
     {'input': '((()))()((())))', 'expected': 15},
