@@ -20,8 +20,6 @@ def find_md5_hash_starting_with_zeroes(input_key: str):
         encoded_key: hash = md5(key_to_be_hashed.encode())
         hex_encoded_key: hash = encoded_key.hexdigest()
 
-        index += 1
-
         if hex_encoded_key[:5] == '00000' and not is_five_zeroes_found:
             is_five_zeroes_found: bool = True
             hash_with_five_zeroes = key_to_be_hashed
@@ -29,6 +27,8 @@ def find_md5_hash_starting_with_zeroes(input_key: str):
         if hex_encoded_key[:6] == '000000':
             is_six_zeroes_found: bool = True
             hash_with_six_zeroes: str = key_to_be_hashed
+
+        index += 1
 
     return hash_with_five_zeroes, hash_with_six_zeroes
 
