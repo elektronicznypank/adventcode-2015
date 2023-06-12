@@ -1,16 +1,19 @@
---- Day 4: The Ideal Stocking Stuffer ---
+--- Day 5: Doesn't He Have Intern-Elves For This? ---
 
-Santa needs help mining some AdventCoins (very similar to bitcoins) to use as gifts for all the economically forward-thinking little girls and boys.
+Santa needs help figuring out which strings in his text file are naughty or nice.
 
-To do this, he needs to find MD5 hashes which, in hexadecimal, start with at least five zeroes. The input to the MD5 hash is some secret key (your puzzle input, given below) followed by a number in decimal. To mine AdventCoins, you must find Santa the lowest positive number (no leading zeroes: 1, 2, 3, ...) that produces such a hash.
+A nice string is one with all of the following properties:
+
+    It contains at least three vowels (aeiou only), like aei, xazegov, or aeiouaeiouaeiou.
+    It contains at least one letter that appears twice in a row, like xx, abcdde (dd), or aabbccdd (aa, bb, cc, or dd).
+    It does not contain the strings ab, cd, pq, or xy, even if they are part of one of the other requirements.
 
 For example:
 
-    If your secret key is abcdef, the answer is 609043, because the MD5 hash of abcdef609043 starts with five zeroes (000001dbbfa...), and it is the lowest such number to do so.
-    If your secret key is pqrstuv, the lowest number it combines with to make an MD5 hash starting with five zeroes is 1048970; that is, the MD5 hash of pqrstuv1048970 looks like 000006136ef....
+    ugknbfddgicrmopn is nice because it has at least three vowels (u...i...o...), a double letter (...dd...), and none of the disallowed substrings.
+    aaa is nice because it has at least three vowels and a double letter, even though the letters used by different rules overlap.
+    jchzalrnumimnmhp is naughty because it has no double letter.
+    haegwjzuvuyypxyu is naughty because it contains the string xy.
+    dvszwmarrgswjxmb is naughty because it contains only one vowel.
 
-Your puzzle input is bgvyzdsv.
-
---- Part Two ---
-
-Now find one that starts with six zeroes.
+How many strings are nice?
