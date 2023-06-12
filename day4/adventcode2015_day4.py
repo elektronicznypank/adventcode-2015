@@ -17,14 +17,14 @@ def find_md5_hash_starting_with_zeroes(input_key: str):
     while not (is_five_zeroes_found and is_six_zeroes_found):
 
         key_to_be_hashed: str = f'{input_key}{index}'
-        encoded_key: hash = md5(key_to_be_hashed.encode())
-        hex_encoded_key: hash = encoded_key.hexdigest()
+        encoded_key_to_be_hashed: hash = md5(key_to_be_hashed.encode())
+        hexadecimal_encoded_key: hash = encoded_key_to_be_hashed.hexdigest()
 
-        if hex_encoded_key[:5] == '00000' and not is_five_zeroes_found:
+        if hexadecimal_encoded_key[:5] == '00000' and not is_five_zeroes_found:
             is_five_zeroes_found: bool = True
             hash_with_five_zeroes = key_to_be_hashed
 
-        if hex_encoded_key[:6] == '000000':
+        if hexadecimal_encoded_key[:6] == '000000':
             is_six_zeroes_found: bool = True
             hash_with_six_zeroes: str = key_to_be_hashed
 
