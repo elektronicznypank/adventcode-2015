@@ -1,4 +1,6 @@
-# from adventcode2015_day4 import find_md5_hash_starting_with_zeroes
+from adventcode2015_day5 import check_if_string_contains_double_letters_in_a_row, \
+     check_if_string_is_forbidden_characters_free, \
+     check_if_string_contains_at_least_three_vowels
 #
 # test_cases: list[dict[str, str, str]] = [
 #     {'input': 'gfhrcops', 'expected_five_zeroes': '36712', 'expected_six_zeroes': '10927261'},
@@ -18,5 +20,7 @@
 #         assert six_zeroes == test_case['expected_six_zeroes']
 #
 #
-# if __name__ == '__main__':
-#     test_day4_function()
+if __name__ == '__main__':
+    print(check_if_string_contains_at_least_three_vowels('fddxyaa'))
+    print(check_if_string_contains_double_letters_in_a_row('fddxyaa'))
+    print(check_if_string_is_forbidden_characters_free('fddxyaa'))
