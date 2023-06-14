@@ -2,14 +2,9 @@ with open('input.txt') as input_file:
     strings_to_be_processed_matrix: list = input_file.readlines()
 
 
-def remove_new_line_from_string(input_string: str) -> str:
-    input_string = input_string.replace('\n', '')
-    return input_string
-
-
-def remove_new_line_from_string_element_in_list(input_list: list[str]) -> list:
-    for element_index in range(len(input_list)):
-        remove_new_line_from_string(input_list[element_index])
+def remove_new_line_from_string_element_in_list(input_list: list[str]) -> list[str]:
+    for element_index, element in enumerate(input_list):
+        input_list[element_index] = element.rstrip()
     return input_list
 
 
@@ -49,8 +44,8 @@ def check_if_string_is_nice(input_string: str) -> bool:
 
 
 def count_nice_strings_in_list(input_list: list, counter: int = 0) -> int:
-    for element_index in input_list:
-        if check_if_string_is_nice(element_index):
+    for element in input_list:
+        if check_if_string_is_nice(element):
             counter += 1
     return counter
 
