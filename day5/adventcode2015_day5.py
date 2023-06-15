@@ -26,7 +26,6 @@ def check_if_string_contains_double_letters_in_a_row(input_string: str) -> bool:
 
 
 def check_if_string_is_forbidden_characters_free(input_string: str) -> bool:
-
     if 'ab' not in input_string \
             and 'cd' not in input_string \
             and 'pq' not in input_string \
