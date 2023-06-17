@@ -1,0 +1,26 @@
+from adventcode2015_day5 import check_if_string_contains_double_letters_in_a_row, \
+     check_if_string_is_forbidden_characters_free, \
+     check_if_string_contains_at_least_three_vowels
+#
+# test_cases: list[dict[str, str, str]] = [
+#     {'input': 'gfhrcops', 'expected_five_zeroes': '36712', 'expected_six_zeroes': '10927261'},
+#     {'input': 'ouqwbkoq', 'expected_five_zeroes': '819576', 'expected_six_zeroes': '30261423'},
+#     {'input': '54372648', 'expected_five_zeroes': '534513', 'expected_six_zeroes': '13094353'},
+#     {'input': '00000000', 'expected_five_zeroes': '782385', 'expected_six_zeroes': '1608317'},
+#     {'input': 'b3k9s6v1', 'expected_five_zeroes': '327482', 'expected_six_zeroes': '39855305'}
+# ]
+#
+#
+# def test_day4_function():
+#     for test_case in test_cases:
+#         five_zeroes, six_zeroes = find_md5_hash_starting_with_zeroes(test_case['input'])
+#         five_zeroes: str = five_zeroes.replace(test_case['input'], '')
+#         six_zeroes: str = six_zeroes.replace(test_case['input'], '')
+#         assert five_zeroes == test_case['expected_five_zeroes']
+#         assert six_zeroes == test_case['expected_six_zeroes']
+#
+#
+if __name__ == '__main__':
+    print(check_if_string_contains_at_least_three_vowels('fddxyaa'))
+    print(check_if_string_contains_double_letters_in_a_row('fddxyaa'))
+    print(check_if_string_is_forbidden_characters_free('fddxyaa'))
