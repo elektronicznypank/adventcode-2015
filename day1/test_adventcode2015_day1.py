@@ -1,4 +1,4 @@
-from adventcode2015_day1 import count_santa_floor_and_basement_index
+from adventcode2015_day1_refactor import count_santa_floor_and_basement_index
 
 part1_test_cases: list[dict[str: str, str: int]] = [
     {'input': '(((())))()()()', 'expected': 0},
