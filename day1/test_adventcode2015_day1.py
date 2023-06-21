@@ -1,6 +1,6 @@
 from adventcode2015_day1_refactor import count_santa_floor_and_basement_index
 
-part1_test_cases: list[dict[str: str, str: int]] = [
+part1_test_cases = [
     {'input': '(((())))()()()', 'expected': 0},
     {'input': '(((', 'expected': 3},
     {'input': ')))', 'expected': -3},
@@ -8,7 +8,7 @@ part1_test_cases: list[dict[str: str, str: int]] = [
     {'input': '(())(())())))))(', 'expected': -4},
 ]
 
-part2_test_cases: list[dict[str: str, str: int or None]] = [
+part2_test_cases = [
     {'input': '())', 'expected': 3},
     {'input': '((())))', 'expected': 7},
     {'input': '((()))()((())))', 'expected': 15},

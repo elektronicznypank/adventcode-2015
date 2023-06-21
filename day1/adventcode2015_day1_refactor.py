@@ -2,6 +2,15 @@ with open('input.txt', 'r') as floors:
     visited_floors: str = floors.readline().strip()
 
 
+def count_by_character(input_string, counter=0):
+    match input_string:
+        case '(':
+            counter += 1
+        case ')':
+            counter -= 1
+    return counter
+
+
 def count_santa_floor_and_basement_index(floors_input: str) -> tuple[int, int or None]:
 
     brackets_counter: int = 0
@@ -9,11 +18,7 @@ def count_santa_floor_and_basement_index(floors_input: str) -> tuple[int, int or
 
     for floor_index, floor in enumerate(floors_input):
 
-        match floor:
-            case '(':
-                brackets_counter += 1
-            case ')':
-                brackets_counter -= 1
+        brackets_counter += count_by_character(floor)
 
         if brackets_counter == -1 and basement_index is None:
             basement_index: int = floor_index + 1
