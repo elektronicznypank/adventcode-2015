@@ -31,7 +31,7 @@ console.log(
 // ts ignore comment below will silent warning, that we are not using this function
 // @ts-ignore
 function getFloorsWithTarget2(floors: string[], target: number = -1): { floorsCount: number, targetAt: number } {
-  const result = floors.reduce(
+  return floors.reduce(
     (accumulator, char, index) => {
       accumulator.floorsCount += char === '(' ? 1 : -1;
       if (accumulator.floorsCount === target) {
@@ -41,8 +41,6 @@ function getFloorsWithTarget2(floors: string[], target: number = -1): { floorsCo
     },
     { floorsCount: 0, targetAt: -1 }
   );
-
-  return { floorsCount: result.floorsCount, targetAt: result.targetAt };
 }
 
 // you can also define functions as arrow functions, it has it's own behavior, but that's topic for future
