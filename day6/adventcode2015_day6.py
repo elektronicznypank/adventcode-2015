@@ -11,7 +11,7 @@ def create_array(amount_of_rows: int, amount_of_columns: int, array_element=0) -
     """
     This function returns an array that contains repeated, specified element.
     :param amount_of_rows: how many rows should an array have
-    :param amount_of_columns: how many columns should and array have
+    :param amount_of_columns: how many columns should an array have
     :param array_element: what element should array contain, default is 0
     """
     the_array = [[array_element for _ in range(amount_of_columns)] for _ in range(amount_of_rows)]
